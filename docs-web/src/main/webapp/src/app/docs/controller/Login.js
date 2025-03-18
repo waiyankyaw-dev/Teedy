@@ -9,6 +9,7 @@ angular.module('docs').controller('Login', function(Restangular, $scope, $rootSc
   // Get the app configuration
   Restangular.one('app').get().then(function(data) {
     $rootScope.app = data;
+    data.guest_login = true;
   });
 
   // Login as guest
@@ -19,7 +20,7 @@ angular.module('docs').controller('Login', function(Restangular, $scope, $rootSc
     };
     $scope.login();
   };
-  
+
   // Login
   $scope.login = function() {
     User.login($scope.user).then(function() {
