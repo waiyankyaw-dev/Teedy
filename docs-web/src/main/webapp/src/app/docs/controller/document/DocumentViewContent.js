@@ -224,4 +224,45 @@ angular.module('docs').controller('DocumentViewContent', function ($scope, $root
       }
     })
   };
+
+  /**
+   * Translate a file.
+   */
+  $scope.translateFile = function (file) {
+      $uibModal.open({
+          template: `
+              <div class="modal-header">
+                  <h3 class="modal-title">Translate Document</h3>
+              </div>
+              <div class="modal-body">
+                  <select ng-model="targetLanguage" class="form-control">
+                      <option value="es">Spanish</option>
+                      <option value="fr">French</option>
+                      <option value="de">German</option>
+                      <option value="zh">Chinese</option>
+                      <option value="ja">Japanese</option>
+                  </select>
+                  <div ng-show="translatedText" class="mt-3">
+                      <h4>Translated Text:</h4>
+                      <pre>{{translatedText}}</pre>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <button class="btn btn-primary" ng-click="translate()">Translate</button>
+                  <button class="btn btn-default" ng-click="$dismiss()">Close</button>
+              </div>
+          `,
+          controller: function($scope, $uibModalInstance) {
+              $scope.targetLanguage = 'es';
+
+              $scope.translate = function() {
+                  Restangular.one('file', file.id).post('translate', {
+                      targetLanguage: $scope.targetLanguage
+                  }).then(function(response) {
+                      $scope.translatedText = response.translated_text;
+                  });
+              };
+          }
+      });
+  };
 });
