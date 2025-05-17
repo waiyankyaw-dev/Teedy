@@ -1446,3 +1446,5 @@ java.lang.NullPointerException: Cannot invoke "jakarta.persistence.EntityManager
 17 May 2025 17:30:11,611 INFO com.sismics.docs.core.listener.async.FileProcessingAsyncListener.extractContent(FileProcessingAsyncListener.java:176) Start extracting content from: File{id=50b51d1e-2d41-4047-a697-66ca6566e8f9, name=apple.txt} 
 17 May 2025 17:30:11,613 INFO com.sismics.docs.core.listener.async.FileProcessingAsyncListener.extractContent(FileProcessingAsyncListener.java:182) File content extracted in 2ms: 50b51d1e-2d41-4047-a697-66ca6566e8f9 
 17 May 2025 17:30:11,616 INFO com.sismics.docs.core.util.FileUtil.endProcessingFile(FileUtil.java:235) Processing ended for file: 50b51d1e-2d41-4047-a697-66ca6566e8f9 
+17 May 2025 17:38:26,036 INFO com.sismics.docs.core.service.InboxService.shutDown(InboxService.java:57) Inbox service shutting down 
+17 May 2025 17:38:26,037 INFO com.sismics.docs.core.service.FileService.shutDown(FileService.java:44) File service shutting down 
