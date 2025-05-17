@@ -819,9 +819,9 @@ public class FileResource extends BaseResource {
     public Response translate(
             @PathParam("id") String fileId,
             @FormParam("targetLanguage") String targetLanguage) {
-        if (!authenticate()) {
-            throw new ForbiddenClientException();
-        }
+//        if (!authenticate()) {
+//            throw new ForbiddenClientException();
+//        }
 
         // Get the file
         FileDao fileDao = new FileDao();

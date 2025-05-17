@@ -1180,3 +1180,35 @@ java.lang.NullPointerException: Cannot invoke "jakarta.persistence.EntityManager
 	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:407)
 	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:348)
 	at org.codehaus.classworlds.Launcher.main(Launcher.java:47)
+17 May 2025 10:30:19,746 INFO com.sismics.util.jpa.EMF.getEntityManagerProperties(EMF.java:67) Configuring EntityManager from hibernate.properties 
+17 May 2025 10:30:28,274 INFO com.sismics.util.jpa.DbOpenHelper.open(DbOpenHelper.java:57) Opening database and executing incremental updates 
+17 May 2025 10:30:28,291 INFO com.sismics.util.jpa.DbOpenHelper.open(DbOpenHelper.java:106) Found database version 31, new version is 31, executing database incremental update scripts 
+17 May 2025 10:30:28,291 INFO com.sismics.util.jpa.DbOpenHelper.open(DbOpenHelper.java:108) Database upgrade complete 
+17 May 2025 10:30:28,291 INFO com.sismics.util.jpa.EMF.getEntityManagerProperties(EMF.java:67) Configuring EntityManager from hibernate.properties 
+17 May 2025 10:30:36,308 INFO com.sismics.util.ClasspathScanner.findClasses(ClasspathScanner.java:48) Found 1 classes for IndexingHandler 
+17 May 2025 10:30:36,508 INFO com.sismics.docs.core.util.indexing.LuceneIndexingHandler.initLucene(LuceneIndexingHandler.java:129) Using RAM Lucene storage 
+17 May 2025 10:30:36,875 INFO com.sismics.docs.core.service.FileService.startUp(FileService.java:39) File service starting up 
+17 May 2025 10:30:36,875 INFO com.sismics.docs.core.service.InboxService.startUp(InboxService.java:52) Inbox service starting up 
+17 May 2025 10:30:36,891 INFO com.sismics.docs.core.service.FileSizeService.startUp(FileSizeService.java:30) File size service starting up 
+17 May 2025 10:30:39,116 INFO com.sismics.docs.core.service.FileSizeService.lambda$runOneIteration$0(FileSizeService.java:50) No more file to process, stopping the service 
+17 May 2025 10:30:39,120 INFO com.sismics.docs.core.service.FileSizeService.shutDown(FileSizeService.java:35) File size service shutting down 
+17 May 2025 10:34:24,792 INFO com.sismics.util.ClasspathScanner.findClasses(ClasspathScanner.java:48) Found 2 classes for AuthenticationHandler 
+17 May 2025 10:35:25,003 INFO com.sismics.docs.core.listener.async.DocumentCreatedAsyncListener.on(DocumentCreatedAsyncListener.java:35) Document created event: DocumentCreatedAsyncEvent{documentId=d651e901-57d9-4c92-9ec5-22fed00d6c1d} 
+17 May 2025 10:35:26,969 INFO com.sismics.docs.core.util.FileUtil.startProcessingFile(FileUtil.java:225) Processing started for file: 1192a0fb-5be2-4861-8e83-7de2f3a7f0f6 
+17 May 2025 10:35:27,014 INFO com.sismics.docs.core.listener.async.FileProcessingAsyncListener.on(FileProcessingAsyncListener.java:53) File created event: FileCreatedAsyncEvent{fileId=1192a0fb-5be2-4861-8e83-7de2f3a7f0f6, language=eng} 
+17 May 2025 10:35:27,026 INFO com.sismics.docs.core.listener.async.DocumentUpdatedAsyncListener.on(DocumentUpdatedAsyncListener.java:39) Document updated event: DocumentUpdatedAsyncEvent{documentId=d651e901-57d9-4c92-9ec5-22fed00d6c1d} 
+17 May 2025 10:35:27,397 INFO com.sismics.util.ClasspathScanner.findClasses(ClasspathScanner.java:48) Found 7 classes for FormatHandler 
+17 May 2025 10:35:32,018 INFO com.sismics.docs.core.listener.async.FileProcessingAsyncListener.extractContent(FileProcessingAsyncListener.java:176) Start extracting content from: File{id=1192a0fb-5be2-4861-8e83-7de2f3a7f0f6, name=I am handsome.docx} 
+17 May 2025 10:35:32,177 INFO com.sismics.docs.core.listener.async.FileProcessingAsyncListener.extractContent(FileProcessingAsyncListener.java:182) File content extracted in 165ms: 1192a0fb-5be2-4861-8e83-7de2f3a7f0f6 
+17 May 2025 10:35:32,214 INFO com.sismics.docs.core.util.FileUtil.endProcessingFile(FileUtil.java:235) Processing ended for file: 1192a0fb-5be2-4861-8e83-7de2f3a7f0f6 
+17 May 2025 10:35:52,926 WARN com.google.cloud.translate.TranslateOptions.<init>(TranslateOptions.java:164) Ignoring Application Default Credentials GOOGLE_APPLICATION_CREDENTIALS: using explicit setting for API key instead. 
+17 May 2025 10:38:49,043 INFO com.sismics.docs.core.listener.async.DocumentCreatedAsyncListener.on(DocumentCreatedAsyncListener.java:35) Document created event: DocumentCreatedAsyncEvent{documentId=de535e36-9402-4e96-a293-324632e8318a} 
+17 May 2025 10:38:49,092 INFO com.sismics.docs.core.util.FileUtil.startProcessingFile(FileUtil.java:225) Processing started for file: d375d8f0-5478-45c9-9310-87d596f0cd08 
+17 May 2025 10:38:49,095 INFO com.sismics.docs.core.listener.async.FileProcessingAsyncListener.on(FileProcessingAsyncListener.java:53) File created event: FileCreatedAsyncEvent{fileId=d375d8f0-5478-45c9-9310-87d596f0cd08, language=eng} 
+17 May 2025 10:38:49,095 INFO com.sismics.docs.core.listener.async.DocumentUpdatedAsyncListener.on(DocumentUpdatedAsyncListener.java:39) Document updated event: DocumentUpdatedAsyncEvent{documentId=de535e36-9402-4e96-a293-324632e8318a} 
+17 May 2025 10:38:49,623 INFO com.sismics.docs.core.listener.async.FileProcessingAsyncListener.extractContent(FileProcessingAsyncListener.java:176) Start extracting content from: File{id=d375d8f0-5478-45c9-9310-87d596f0cd08, name=Handsome.docx} 
+17 May 2025 10:38:49,627 INFO com.sismics.docs.core.listener.async.FileProcessingAsyncListener.extractContent(FileProcessingAsyncListener.java:182) File content extracted in 4ms: d375d8f0-5478-45c9-9310-87d596f0cd08 
+17 May 2025 10:38:49,631 INFO com.sismics.docs.core.util.FileUtil.endProcessingFile(FileUtil.java:235) Processing ended for file: d375d8f0-5478-45c9-9310-87d596f0cd08 
+17 May 2025 10:46:15,074 INFO com.sismics.docs.core.service.InboxService.shutDown(InboxService.java:57) Inbox service shutting down 
+17 May 2025 10:46:15,076 INFO com.sismics.docs.core.service.FileService.shutDown(FileService.java:44) File service shutting down 
+17 May 2025 10:46:25,524 INFO com.sismics.util.jpa.EMF.getEntityManagerProperties(EMF.java:67) Configuring EntityManager from hibernate.properties 
