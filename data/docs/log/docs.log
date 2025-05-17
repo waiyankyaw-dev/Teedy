@@ -1212,3 +1212,14 @@ java.lang.NullPointerException: Cannot invoke "jakarta.persistence.EntityManager
 17 May 2025 10:46:15,074 INFO com.sismics.docs.core.service.InboxService.shutDown(InboxService.java:57) Inbox service shutting down 
 17 May 2025 10:46:15,076 INFO com.sismics.docs.core.service.FileService.shutDown(FileService.java:44) File service shutting down 
 17 May 2025 10:46:25,524 INFO com.sismics.util.jpa.EMF.getEntityManagerProperties(EMF.java:67) Configuring EntityManager from hibernate.properties 
+17 May 2025 10:46:32,963 INFO com.sismics.util.jpa.DbOpenHelper.open(DbOpenHelper.java:57) Opening database and executing incremental updates 
+17 May 2025 10:46:32,974 INFO com.sismics.util.jpa.DbOpenHelper.open(DbOpenHelper.java:106) Found database version 31, new version is 31, executing database incremental update scripts 
+17 May 2025 10:46:32,974 INFO com.sismics.util.jpa.DbOpenHelper.open(DbOpenHelper.java:108) Database upgrade complete 
+17 May 2025 10:46:32,975 INFO com.sismics.util.jpa.EMF.getEntityManagerProperties(EMF.java:67) Configuring EntityManager from hibernate.properties 
+17 May 2025 10:46:37,171 INFO com.sismics.util.ClasspathScanner.findClasses(ClasspathScanner.java:48) Found 1 classes for IndexingHandler 
+17 May 2025 10:46:37,257 INFO com.sismics.docs.core.util.indexing.LuceneIndexingHandler.initLucene(LuceneIndexingHandler.java:129) Using RAM Lucene storage 
+17 May 2025 10:46:37,390 INFO com.sismics.docs.core.service.FileService.startUp(FileService.java:39) File service starting up 
+17 May 2025 10:46:37,397 INFO com.sismics.docs.core.service.InboxService.startUp(InboxService.java:52) Inbox service starting up 
+17 May 2025 10:46:37,399 INFO com.sismics.docs.core.service.FileSizeService.startUp(FileSizeService.java:30) File size service starting up 
+17 May 2025 10:46:38,389 INFO com.sismics.docs.core.service.FileSizeService.lambda$runOneIteration$0(FileSizeService.java:50) No more file to process, stopping the service 
+17 May 2025 10:46:38,390 INFO com.sismics.docs.core.service.FileSizeService.shutDown(FileSizeService.java:35) File size service shutting down 
