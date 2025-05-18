@@ -1,0 +1,1 @@
+create table T_USER_REQUEST ( URQ_ID_C varchar(36) not null, URQ_USERNAME_C varchar(50) not null, URQ_PASSWORD_C varchar(200) not null, URQ_EMAIL_C varchar(100) not null, URQ_CREATEDATE_D datetime not null, URQ_STATUS_C varchar(10) not null, primary key (URQ_ID_C) );
