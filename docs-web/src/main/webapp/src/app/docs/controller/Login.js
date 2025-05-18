@@ -50,6 +50,15 @@ angular.module('docs').controller('Login', function(Restangular, $scope, $rootSc
     });
   };
 
+  // Open user request modal
+  $scope.openUserRequestModal = function() {
+    $uibModal.open({
+      templateUrl: 'partial/docs/userrequest.html',
+      controller: 'ModalUserRequest'
+    });
+  };
+
+
   // Password lost
   $scope.openPasswordLost = function () {
     $uibModal.open({

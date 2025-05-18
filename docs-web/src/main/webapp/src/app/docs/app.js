@@ -181,6 +181,15 @@ angular.module('docs',
         }
       }
     })
+    .state('settings.userrequest', {
+      url: '/userrequest',
+      views: {
+        'settings': {
+          templateUrl: 'partial/docs/settings.userrequest.html',
+          controller: 'SettingsUserRequest'
+        }
+      }
+    })
     .state('settings.workflow', {
       url: '/workflow',
       views: {
