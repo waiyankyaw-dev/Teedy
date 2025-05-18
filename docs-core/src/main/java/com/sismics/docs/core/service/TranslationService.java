@@ -4,8 +4,10 @@ import com.google.cloud.translate.Translate;
 import com.google.cloud.translate.TranslateOptions;
 import com.google.cloud.translate.Translation;
 
+//AIzaSyC3bZnXH1CrrAZLgcPEe-NJRvbojFBPIUU
+//AIzaSyDOjDKYJjWQ4agveaXdR9RmWqdGrS7fsE8(malaysia)
 public class TranslationService {
-    private static final String GOOGLE_API_KEY = "AIzaSyDOjDKYJjWQ4agveaXdR9RmWqdGrS7fsE8";
+    private static final String GOOGLE_API_KEY = "AIzaSyC3bZnXH1CrrAZLgcPEe-NJRvbojFBPIUU";
 
     private static Translate translate = TranslateOptions.newBuilder()
             .setApiKey(GOOGLE_API_KEY)
