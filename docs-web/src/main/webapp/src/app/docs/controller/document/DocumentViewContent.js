@@ -196,7 +196,7 @@ angular.module('docs').controller('DocumentViewContent', function ($scope, $root
         name: fileUpdated.name
       }).then(function () {
         file.name = fileUpdated.name;
-      })
+      });
     });
   };
 
@@ -222,6 +222,64 @@ angular.module('docs').controller('DocumentViewContent', function ($scope, $root
           return file;
         }
       }
-    })
+    });
+  };
+
+  /**
+   * Translate a file.
+   */
+  $scope.translateFile = function (file) {
+    $uibModal.open({
+      template: `
+        <div class="modal-header">
+          <h3 class="modal-title">Translate Documenttt</h3>
+        </div>
+        <div class="modal-body">
+          <select ng-model="targetLanguage" class="form-control">
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+            <option value="de">English</option>
+            <option value="zh">Chinese</option>
+            <option value="ja">Japanese</option>
+          </select>
+          <div ng-show="translatedText" class="mt-3">
+            <h4>Translated Text:</h4>
+            <pre>{{translatedText}}</pre>
+          </div>
+          <div ng-show="error" class="mt-3 alert alert-danger">
+            {{error}}
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" ng-click="translate()">Translate</button>
+          <button class="btn btn-default" ng-click="$dismiss()">Close</button>
+        </div>
+      `,
+      controller: function($scope, $uibModalInstance) {
+        $scope.targetLanguage = 'es';
+        $scope.translatedText = '';
+        $scope.error = '';
+
+        $scope.translate = function() {
+          $scope.error = '';
+          $scope.translatedText = '';
+          Restangular.one('file', file.id).post('translate', {
+            targetLanguage: $scope.targetLanguage
+          }).then(function(response) {
+            // Check if the response contains the rate limit error
+            if (response.translated_text && response.translated_text.toLowerCase().includes('user rate limit exceeded')) {
+//              $scope.translatedText = '我很帅 我很帅 我很帅 我很帅 我很帅 我很帅 我很帅 我很帅 我很帅 我很帅';
+              $scope.translatedText = response.translated_text;
+            } else {
+              $scope.translatedText = response.translated_text;
+            }
+          }).catch(function(response) {
+            // Handle any other errors
+            $scope.error = 'Translation error: ' + (response.data && response.data.translated_text ? response.data.translated_text : 'Unknown error');
+          });
+        };
+      }
+    });
   };
 });

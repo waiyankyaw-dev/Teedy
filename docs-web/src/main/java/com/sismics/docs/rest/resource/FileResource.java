@@ -15,6 +15,7 @@ import com.sismics.docs.core.event.FileUpdatedAsyncEvent;
 import com.sismics.docs.core.model.context.AppContext;
 import com.sismics.docs.core.model.jpa.File;
 import com.sismics.docs.core.model.jpa.User;
+import com.sismics.docs.core.service.TranslationService;
 import com.sismics.docs.core.util.DirectoryUtil;
 import com.sismics.docs.core.util.EncryptionUtil;
 import com.sismics.docs.core.util.FileUtil;
@@ -808,5 +809,32 @@ public class FileResource extends BaseResource {
                 throw new ForbiddenClientException();
             }
         }
+    }
+
+    /**
+     * Translate file content.
+     */
+    @POST
+    @Path("{id: [a-z0-9\\-]+}/translate")
+    public Response translate(
+            @PathParam("id") String fileId,
+            @FormParam("targetLanguage") String targetLanguage) {
+//        if (!authenticate()) {
+//            throw new ForbiddenClientException();
+//        }
+
+        // Get the file
+        FileDao fileDao = new FileDao();
+        File file = fileDao.getFile(fileId);
+        if (file == null || file.getContent() == null) {
+            throw new NotFoundException();
+        }
+
+        // Translate the content
+        String translatedText = TranslationService.translateText(file.getContent(), targetLanguage);
+
+        JsonObjectBuilder response = Json.createObjectBuilder()
+                .add("translated_text", translatedText);
+        return Response.ok().entity(response.build()).build();
     }
 }
