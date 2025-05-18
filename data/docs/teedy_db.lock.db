@@ -1,6 +1,6 @@
 #FileLock
-#Sat May 17 02:05:48 CST 2025
-hostName=LAPTOP-MS0PAGLN.
-id=196d8f5e5ce0544ae3bb5cedf02e9eaac28f61c0c30
+#Mon May 19 01:12:34 CST 2025
+server=10.24.227.75\:60520
+hostName=10.24.227.75
 method=file
-server=127.0.1.1\:41837
+id=196e461ec4ddb12fb0b7bb27c39f04a2082776daac6
