@@ -470,10 +470,10 @@ angular.module('docs',
     var param = function(obj) {
       var query = '';
       var name, value, fullSubName, subName, subValue, innerObj, i;
-      
+
       for(name in obj) {
         value = obj[name];
-        
+
         if(value instanceof Array) {
           for(i=0; i<value.length; ++i) {
             subValue = value[i];
@@ -495,10 +495,10 @@ angular.module('docs',
           query += encodeURIComponent(name) + '=' + encodeURIComponent(value) + '&';
         }
       }
-      
+
       return query.length ? query.substr(0, query.length - 1) : query;
     };
-    
+
     return angular.isObject(data) && String(data) !== '[object File]' ? param(data) : data;
   }];
 
@@ -512,6 +512,18 @@ angular.module('docs',
 .run(function($rootScope, $state, $stateParams, Restangular) {
   $rootScope.$state = $state;
   $rootScope.$stateParams = $stateParams;
+
+  // Generate and persist a random token for the session if not already present
+  if (!localStorage.randomToken) {
+    // 32-character alphanumeric token
+    var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var token = '';
+    for (var i = 0; i < 32; i++) {
+      token += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    localStorage.randomToken = token;
+  }
+  $rootScope.randomToken = localStorage.randomToken;
 
   // Fetch the current theme configuration
   $rootScope.appName = '';

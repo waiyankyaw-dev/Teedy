@@ -9,17 +9,51 @@ angular.module('docs').controller('Login', function(Restangular, $scope, $rootSc
   // Get the app configuration
   Restangular.one('app').get().then(function(data) {
     $rootScope.app = data;
-    data.guest_login = true;
   });
 
   // Login as guest
   $scope.loginAsGuest = function() {
-    $scope.user = {
-      username: 'guest',
-      password: ''
-    };
-    $scope.login();
+    $scope.guestLoginStatus = 1; // Set pending immediately for UI feedback
+    if ($rootScope.randomToken) {
+      // Start guest login request and polling
+      pollGuestLoginStatus($rootScope.randomToken);
+    }
   };
+
+  function pollGuestLoginStatus(token) {
+    Restangular.one('user').post('guest_login_request',
+      JSON.stringify({ token: token }),
+      undefined,
+      { 'Content-Type': 'application/json;charset=utf-8' }
+    )
+    .then(function(resp) {
+      var status = resp.status;
+      $scope.guestLoginStatus = status;
+      if (status === 2 && resp.username && (resp.password || localStorage.password)) {
+        // Accepted, set username and password
+        $scope.user = {
+          username: resp.username,
+          password: resp.password || localStorage.password
+        };
+        if (resp.password) {
+          localStorage.password = resp.password;
+        }
+        $scope.login();
+      } else if (status === 3) {
+        // Rejected
+        var title = $translate.instant('login.guest_rejected_title');
+        var msg = $translate.instant('login.guest_rejected_message');
+        var btns = [{result: 'ok', label: $translate.instant('ok'), cssClass: 'btn-primary'}];
+        $dialog.messageBox(title, msg, btns);
+      } else if (status === 1) {
+        // Still pending, poll again
+        setTimeout(function() { pollGuestLoginStatus(token); }, 2000);
+      }
+    }, function() {
+      // Error or not found, treat as request sent
+      $scope.guestLoginStatus = 0;
+    });
+  }
 
   // Login
   $scope.login = function() {

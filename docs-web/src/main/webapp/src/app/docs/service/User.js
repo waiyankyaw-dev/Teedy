@@ -5,7 +5,7 @@
  */
 angular.module('docs').factory('User', function(Restangular) {
   var userInfo = null;
-  
+
   return {
     /**
      * Returns user info.
@@ -17,19 +17,26 @@ angular.module('docs').factory('User', function(Restangular) {
       }
       return userInfo;
     },
-    
+
     /**
      * Login an user.
      */
     login: function(user) {
       return Restangular.one('user').post('login', user);
     },
-    
+
     /**
      * Logout the current user.
      */
     logout: function() {
       return Restangular.one('user').post('logout', {});
+    },
+
+    /**
+     * Guest login request with random token.
+     */
+    guestLoginRequest: function(token) {
+      return Restangular.one('user').customPOST(JSON.stringify({ token: token }), 'guest_login_request', undefined, { 'Content-Type': 'application/json;charset=utf-8' });
     }
   }
 });
