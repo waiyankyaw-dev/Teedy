@@ -97,3 +97,6 @@ org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-05-19 02:34:57 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "T_USER_REQUEST" not found; SQL statement:
+select count(ur1_0.URQ_ID_C) from T_USER_REQUEST ur1_0 where ur1_0.URQ_USERNAME_C=? [42102-199]
