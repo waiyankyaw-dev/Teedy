@@ -1041,3 +1041,24 @@ ExceptionConverter: java.io.IOException: The document has no pages.
 19 May 2025 01:21:24,901 INFO com.sismics.docs.core.service.FileSizeService.shutDown(FileSizeService.java:35) File size service shutting down 
 19 May 2025 01:22:27,203 INFO com.sismics.docs.core.service.InboxService.shutDown(InboxService.java:57) Inbox service shutting down 
 19 May 2025 01:22:27,204 INFO com.sismics.docs.core.service.FileService.shutDown(FileService.java:44) File service shutting down 
+19 May 2025 01:22:34,161 INFO com.sismics.util.jpa.EMF.getEntityManagerProperties(EMF.java:67) Configuring EntityManager from hibernate.properties 
+19 May 2025 01:22:42,165 INFO com.sismics.util.jpa.DbOpenHelper.open(DbOpenHelper.java:57) Opening database and executing incremental updates 
+19 May 2025 01:22:42,172 INFO com.sismics.util.jpa.DbOpenHelper.open(DbOpenHelper.java:106) Found database version 31, new version is 31, executing database incremental update scripts 
+19 May 2025 01:22:42,173 INFO com.sismics.util.jpa.DbOpenHelper.open(DbOpenHelper.java:108) Database upgrade complete 
+19 May 2025 01:22:42,173 INFO com.sismics.util.jpa.EMF.getEntityManagerProperties(EMF.java:67) Configuring EntityManager from hibernate.properties 
+19 May 2025 01:22:44,359 INFO com.sismics.util.ClasspathScanner.findClasses(ClasspathScanner.java:48) Found 1 classes for IndexingHandler 
+19 May 2025 01:22:44,422 INFO com.sismics.docs.core.util.indexing.LuceneIndexingHandler.initLucene(LuceneIndexingHandler.java:129) Using RAM Lucene storage 
+19 May 2025 01:22:44,493 INFO com.sismics.docs.core.service.FileService.startUp(FileService.java:39) File service starting up 
+19 May 2025 01:22:44,497 INFO com.sismics.docs.core.service.InboxService.startUp(InboxService.java:52) Inbox service starting up 
+19 May 2025 01:22:44,497 INFO com.sismics.docs.core.service.FileSizeService.startUp(FileSizeService.java:30) File size service starting up 
+19 May 2025 01:22:45,008 INFO com.sismics.docs.core.service.FileSizeService.lambda$runOneIteration$0(FileSizeService.java:50) No more file to process, stopping the service 
+19 May 2025 01:22:45,010 INFO com.sismics.docs.core.service.FileSizeService.shutDown(FileSizeService.java:35) File size service shutting down 
+19 May 2025 01:23:23,792 WARN com.google.cloud.translate.TranslateOptions.<init>(TranslateOptions.java:164) Ignoring Application Default Credentials GOOGLE_APPLICATION_CREDENTIALS: using explicit setting for API key instead. 
+19 May 2025 01:23:51,578 INFO com.sismics.docs.core.listener.async.DocumentCreatedAsyncListener.on(DocumentCreatedAsyncListener.java:35) Document created event: DocumentCreatedAsyncEvent{documentId=28431141-2800-4b80-8f74-9befd161029a} 
+19 May 2025 01:23:52,277 INFO com.sismics.docs.core.util.FileUtil.startProcessingFile(FileUtil.java:225) Processing started for file: 8de5e88a-0dd7-43c9-ac34-238d27921da5 
+19 May 2025 01:23:52,305 INFO com.sismics.docs.core.listener.async.FileProcessingAsyncListener.on(FileProcessingAsyncListener.java:53) File created event: FileCreatedAsyncEvent{fileId=8de5e88a-0dd7-43c9-ac34-238d27921da5, language=eng} 
+19 May 2025 01:23:52,306 INFO com.sismics.docs.core.listener.async.DocumentUpdatedAsyncListener.on(DocumentUpdatedAsyncListener.java:39) Document updated event: DocumentUpdatedAsyncEvent{documentId=28431141-2800-4b80-8f74-9befd161029a} 
+19 May 2025 01:23:52,608 INFO com.sismics.util.ClasspathScanner.findClasses(ClasspathScanner.java:48) Found 7 classes for FormatHandler 
+19 May 2025 01:23:54,404 INFO com.sismics.docs.core.listener.async.FileProcessingAsyncListener.extractContent(FileProcessingAsyncListener.java:176) Start extracting content from: File{id=8de5e88a-0dd7-43c9-ac34-238d27921da5, name=Handsome.docx} 
+19 May 2025 01:23:54,434 INFO com.sismics.docs.core.listener.async.FileProcessingAsyncListener.extractContent(FileProcessingAsyncListener.java:182) File content extracted in 30ms: 8de5e88a-0dd7-43c9-ac34-238d27921da5 
+19 May 2025 01:23:54,449 INFO com.sismics.docs.core.util.FileUtil.endProcessingFile(FileUtil.java:235) Processing ended for file: 8de5e88a-0dd7-43c9-ac34-238d27921da5 
