@@ -7,7 +7,7 @@ import com.google.cloud.translate.Translation;
 //AIzaSyC3bZnXH1CrrAZLgcPEe-NJRvbojFBPIUU
 //AIzaSyDOjDKYJjWQ4agveaXdR9RmWqdGrS7fsE8(malaysia)
 public class TranslationService {
-    private static final String GOOGLE_API_KEY = "AIzaSyB29gBcRUYI7rfQsHeimEJ5b6IwLoNPOIs";
+    private static final String GOOGLE_API_KEY = "";
 
     private static Translate translate = TranslateOptions.newBuilder()
             .setApiKey(GOOGLE_API_KEY)
