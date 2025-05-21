@@ -100,3 +100,15 @@ org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (
 2025-05-19 02:34:57 jdbc[4]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "T_USER_REQUEST" not found; SQL statement:
 select count(ur1_0.URQ_ID_C) from T_USER_REQUEST ur1_0 where ur1_0.URQ_USERNAME_C=? [42102-199]
+2025-05-21 21:51:27 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "T_USER_REQUEST" not found; SQL statement:
+select count(ur1_0.URQ_ID_C) from T_USER_REQUEST ur1_0 where ur1_0.URQ_USERNAME_C=? [42102-199]
+2025-05-21 21:51:29 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "T_USER_REQUEST" not found; SQL statement:
+select count(ur1_0.URQ_ID_C) from T_USER_REQUEST ur1_0 where ur1_0.URQ_USERNAME_C=? [42102-199]
+2025-05-21 21:56:57 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "T_USER_REQUEST" not found; SQL statement:
+select count(ur1_0.URQ_ID_C) from T_USER_REQUEST ur1_0 where ur1_0.URQ_USERNAME_C=? [42102-199]
+2025-05-21 22:41:19 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "T_USER_REQUEST" not found; SQL statement:
+select ur.URQ_ID_C, ur.URQ_USERNAME_C, ur.URQ_EMAIL_C, ur.URQ_CREATEDATE_D, ur.URQ_STATUS_C  from T_USER_REQUEST ur  order by ur.URQ_CREATEDATE_D desc [42102-199]
